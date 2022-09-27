@@ -16,7 +16,7 @@ intializeFirebase();
 const useFirebase = () => {
   const [loading, setLoading] = useState(true);
   const [authError, setAuthError] = useState("");
-  const [admin, setAdmin] = useState(false);
+  const [admin, setAdmin] = useState("");
 
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
@@ -50,6 +50,7 @@ const useFirebase = () => {
         history(destination);
       })
       .catch((error) => {
+        console.log(error.message);
         setAuthError(error.message);
       })
       .finally(() => setLoading(false));
@@ -58,12 +59,14 @@ const useFirebase = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user);
-        const uid = user.uid;
-        console.log(uid);
+        setUser(user);       
+        fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+          .then((res) => res.json())
+          .then((data) => setAdmin(data?.role));
+        
       }
     });
-  }, []);
+  }, [auth]);
 
   const leLogout = () => {
     signOut(auth)
@@ -76,34 +79,39 @@ const useFirebase = () => {
       .finally(() => setLoading(false));
   };
 
-  const handleUserRegister = (email, password, location, history) => {
+  const handleUserRegister = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setUser(result.user);
         console.log(result.user);
-
-        hanldeUserInfoRegister(result.user.email);
-        
+        const data = {
+          name: result.user.name,
+          email: result.user.email,
+          uid: result.user.uid,
+        };
+        saveUser(data);
       })
       .catch((error) => {})
       .finally(() => setLoading(false));
   };
 
-  const hanldeUserInfoRegister = (email) => {
-    fetch("https://young-bayou-81881.herokuapp.com/addUserInfo", {
+  const saveUser = (data) => {
+    fetch("http://localhost:5000/users", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => console.log(result));
   };
 
-  useEffect(() => {
-    fetch(`https://young-bayou-81881.herokuapp.com/checkAdmin/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setAdmin(data[0]?.role));
-  }, [user?.email]);
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setAdmin(data[0]?.role));
+  // }, [user?.email]);
+
+  console.log(admin);
 
   return {
     error,

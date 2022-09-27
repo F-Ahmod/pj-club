@@ -1,27 +1,16 @@
-import React, { useState } from "react";
-import { Container, Typography, TextField, Button } from "@mui/material";
-import { Grid } from "@mui/material";
+import React from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import useFirebase from "../../../Firebase/useFirebase";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const [loginData, setLoginData] = useState({});
+  const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const { singinWithGoogle, loginUser } = useFirebase();
   const location = useLocation();
 
-  const handleLoginInput = (e) => {
-    const loginInput = e.target.name;
-    const value = e.target.value;
-    const loninInfo = { ...loginData };
-    loninInfo[loginInput] = value;
-    setLoginData(loninInfo);
-  };
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    console.log(loginData);
-    loginUser(loginData.email, loginData.password, location, navigate);
-    
+  const onSubmit = (data) => {
+    loginUser(data.email, data.password, location, navigate);
   };
 
   const handleGoogleSignIn = () => {
@@ -29,65 +18,42 @@ const Login = () => {
   };
 
   return (
-    <Container
-      className="mt-5 mb-3"
-      style={{ backgroundColor: "lightGreen", width: "400px" }}
+    <div
+      className="mt-5 mb-3 mx-auto p-3 rounded"
+      style={{ backgroundColor: "#fff", width: "350px" }}
     >
-      <Grid container spacing={2}>
-        <Grid item sx={{ mt: 8 }}>
-          <Typography variant="body1" gutterBottom className="text-light fs-2">
-            Please Login
-          </Typography>
-          <form onSubmit={handleLoginSubmit}>
-            <TextField
-              sx={{ width: "50%", m: 1, light: "#0066ff" }}
-              id="standard-basic"
-              label="Your Email"
-              name="email"
-              onBlur={handleLoginInput}
-              variant="standard"
-            />
-            <TextField
-              sx={{ width: "50%", m: 1 }}
-              id="standard-basic"
-              label="Your Password"
-              type="password"
-              name="password"
-              onBlur={handleLoginInput}
-              variant="standard"
-            />
+      <h5>Login</h5>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          className="input-field "
+          name="email"
+          placeholder="Email"
+          type="email"
+          {...register("email", { required: true })}
+        />
+        <br />
+        <input
+          className="input-field "
+          name="password"
+          type="password"
+          placeholder="Password"
+          {...register("password", { required: true })}
+        />
+        <br />
 
-            <Button
-              sx={{ width: "50%" }}
-              type="submit"
-              variant="contained"
-              color="success"
-            >
-              Login
-            </Button>
-            <br />
-
-            <Button
-              onClick={handleGoogleSignIn}
-              sx={{ width: "50%", m: 1 }}
-              variant="contained"
-              color="success"
-            >
-              Google Sign In
-            </Button>
-
-            <NavLink style={{ textDecoration: "none" }} to="/register">
-              <Button variant="text">New User? Please Register</Button>
-            </NavLink>
-          </form>
-
-          <br />
-          <NavLink style={{ textDecoration: "none" }} to="/">
-            <Button variant="text">Go Home Page</Button>
-          </NavLink>
-        </Grid>
-      </Grid>
-    </Container>
+        <input className="submit-button" type="submit" value="Loging" />
+        <br />
+      </form>
+      <NavLink to="/login">
+        <button className="submit-button mb-3" onClick={handleGoogleSignIn}>
+          Google Sign In
+        </button>
+      </NavLink>
+      <br />
+      <NavLink style={{ textDecoration: "none" }} to="/register">
+        <button>register</button>
+      </NavLink>
+    </div>
   );
 };
 

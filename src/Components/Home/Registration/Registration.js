@@ -3,14 +3,14 @@ import "./Registration.css";
 import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import useFirebase from "../../../Firebase/useFirebase";
+//import useFirebase from "../../../Firebase/useFirebase";
 
 const Registration = () => {
   const [msg, setMsg] = useState("");
-  const { handleUserRegister } = useFirebase();
+  //const { handleUserRegister } = useFirebase();
   const { register, handleSubmit } = useForm();
-  const location = useLocation();
-  const navigate = useNavigate();
+  //const location = useLocation();
+  //const navigate = useNavigate();
 
   const onSubmit = (data) => {
     fetch("http://localhost:5000/register", {
@@ -35,13 +35,16 @@ const Registration = () => {
 
   return (
     <div
-      className="mt-5 mb-3 mx-auto"
-      style={{ backgroundColor: "#738988  ", width: "400px", height: "350px" }}
+      className="mt-5 mb-3 mx-auto p-3 rounded"
+      style={{ backgroundColor: "#fff", width: "350px" }}
     >
+  
+
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
-          style={{ marginTop: "100px" }}
-          className="input-field mb-2"
+          
+          className="input-field"
           name="Name"
           placeholder="Your Name"
           type="text"
@@ -49,7 +52,7 @@ const Registration = () => {
         />
         <br />
         <input
-          className="input-field mb-2"
+          className="input-field "
           name="email"
           placeholder="Email"
           type="email"
@@ -58,7 +61,7 @@ const Registration = () => {
         <br />
 
         <input
-          class="text-input"
+          className="input-field"
           id="phone"
           name="phone"
           type="phone"
@@ -77,13 +80,13 @@ const Registration = () => {
         <br />
 
         <input
-          className="submit-btn #99535E mt-3"
+          className="submit-button"
           type="submit"
           value="Register"
         />
         <br />
         <NavLink style={{ textDecoration: "none" }} to="/login">
-          <Button className="text-light" variant="text">
+          <Button className="text-dark" variant="text">
             Already Register? Please Login
           </Button>
         </NavLink>
@@ -95,7 +98,7 @@ const Registration = () => {
       </form>
 
       <NavLink style={{ textDecoration: "none" }} to="/">
-        <Button className="text-light" variant="text">
+        <Button className="text-dark" variant="text">
           Go Home Page
         </Button>
       </NavLink>

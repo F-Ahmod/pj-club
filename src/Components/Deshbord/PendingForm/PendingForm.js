@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Table } from "react-bootstrap";
 import useFirebase from "../../../Firebase/useFirebase";
 
 const PendingForm = () => {
@@ -29,30 +30,46 @@ const PendingForm = () => {
 
   return (
     <div>
+       <h5 class="mt-3 mb-2">Regestration request</h5>
       {msg && (
         <div class="alert alert-success" role="alert">
           {msg}
         </div>
       )}
-      {pendingForm.map((form) => (
-        <div>
-          <p>Name: {form.Name}</p>
-          
-          <p>Email: {form.email}</p>
-          <button
-            className="btn btn-success"
-            onClick={() => handelapproveForm(form)}
-          >
-            Approve
-          </button>
-          <button
-            className="btn btn-danger"
-            onClick={() => handelCancleForm(form)}
-          >
-            Cancel
-          </button>
-        </div>
-      ))}
+
+      <Table striped bordered hover size="sm">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pendingForm.map((form) => (
+            <tr>
+              <td>{form.Name}</td>
+              <td>{form.email}</td>
+              <td>
+                <button
+                  class="product-cell stock btn btn-success me-2"
+                  onClick={() => handelapproveForm(form)}
+                >
+                  <span class="cell-label"></span>Approve
+                </button>
+              </td>
+              <td>
+                <button
+                  class="product-cell stock btn btn-danger"
+                  onClick={() => handelCancleForm(form)}
+                >
+                  <span class="cell-label"></span>Cancel
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 };
