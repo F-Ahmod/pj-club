@@ -1,0 +1,82 @@
+[
+    {
+        "id":"1",
+        "name":"PJ Club",
+        "img":"https://i.ibb.co/KNgDQny/man-golf-field-flag-23-2148822983.jpg",
+        "link":"https://assinment-12-9a339.web.app/",
+        "price":"300",
+        "server":"https://github.com/fatehahmod/Dreams-food-Delivery-server-side",
+        "clint":"https://github.com/fatehahmod/dream-s-Food-delivery-clint-side",
+        "b1":"• This is a full stack single-page application .",
+        "b2":"• User and admin dashboard,they will control ownsite from dashboard",
+        "b3":"Technology used: React js, React router, React Hook Form, Firebase Authentication, Node js, Express,React Bootstrap, MongoDB, Heroku.",
+        "details":" This is a full stack single-pageapplication e-commerce related website•Login adnd regestration use by using firebase Athantication,admin and user deshboard,easy to order"
+    },
+    {
+        "id":"2",
+        "name":"PJ Club",
+        "img":"https://i.ibb.co/VTn4S55/male-golfer-putting-golf-ball-green-171337-6640.jpg",
+        "price":"500",
+        "link":"https://food-delivery-83426.firebaseapp.com/",
+        "server":"https://github.com/fatehahmod/Dreams-food-Delivery-server-side",
+        "clint":"https://github.com/fatehahmod/dream-s-Food-delivery-clint-side",
+        "b1":"• Full stack and dynamic routing application for food delivery.",
+        "b2":"• Easy to Order a food & seller can add a food in this website.",
+        "b3":"Technology used: React js, React router, React Hook Form, Firebase Authentication, Node js, Express,React Bootstrap, MongoDB, Heroku.",
+        " details":"Full stack and dynamic routing application for food delivery.Easy to Order a food & seller can add a food in this website,"
+    },
+   
+    {
+        "id":"3",
+        "name":"PJ Club",
+        "img":"https://i.ibb.co/fSXVd1C/240-F-283299374-t-Ij-JXE360-Hvd-K9r5pskk-Zbe-TQ2qok-Qf-T.jpg",
+        "price":"450",
+        "link":"https://hospital-health-f97c3.web.app/",
+        "server":"https://github.com/fatehahmod/jm-genarel-hospital-server",
+        "clint":"https://github.com/fatehahmod/jm-genarel-hospital-clint-side",
+        "b1":"• Health related website,Single page application & UI responsive",
+        "b2":"• User will find a Doctor with Doctor details also they will know all information about the Hospital",
+        "b3":"Technology used: React js, React router, Firebase Authentication, Bootstrap",
+        " details":"Health related website.User will find a Doctor with Doctor details also they will know all information about the Hospita.single page application and ui responsive"
+    },
+    {
+        "id":"3",
+        "name":"PJ Club",
+        "img":"https://i.ibb.co/xmV37Jx/full-shot-group-girls-playing-golf-23-2148295357.jpg",
+        "link":"https://hospital-health-f97c3.web.app/",
+        "price":"380",
+        "server":"https://github.com/fatehahmod/jm-genarel-hospital-server",
+        "clint":"https://github.com/fatehahmod/jm-genarel-hospital-clint-side",
+        "b1":"• Health related website,Single page application & UI responsive",
+        "b2":"• User will find a Doctor with Doctor details also they will know all information about the Hospital",
+        "b3":"Technology used: React js, React router, Firebase Authentication, Bootstrap",
+        " details":"Health related website.User will find a Doctor with Doctor details also they will know all information about the Hospita.single page application and ui responsive"
+    }, 
+    {
+        "id":"3",
+        "name":"PJ Club",
+        "img":" https://i.ibb.co/Y8G7WxC/shallow-focus-golf-club-ball-lawn-181624-33926.jpg",
+        "link":"https://hospital-health-f97c3.web.app/",
+        "price":"570",
+        "server":"https://github.com/fatehahmod/jm-genarel-hospital-server",
+        "clint":"https://github.com/fatehahmod/jm-genarel-hospital-clint-side",
+        "b1":"• Health related website,Single page application & UI responsive",
+        "b2":"• User will find a Doctor with Doctor details also they will know all information about the Hospital",
+        "b3":"Technology used: React js, React router, Firebase Authentication, Bootstrap",
+        " details":"Health related website.User will find a Doctor with Doctor details also they will know all information about the Hospita.single page application and ui responsive"
+    },
+    
+    {
+        "id":"3",
+        "name":"PJ Club",
+        "price":"350",
+        "img":"https://i.ibb.co/YN7cGJf/glof-ball-putting-mat-39497-116.jpg",
+        "link":"https://hospital-health-f97c3.web.app/",
+        "server":"https://github.com/fatehahmod/jm-genarel-hospital-server",
+        "clint":"https://github.com/fatehahmod/jm-genarel-hospital-clint-side",
+        "b1":"• Health related website,Single page application & UI responsive",
+        "b2":"• User will find a Doctor with Doctor details also they will know all information about the Hospital",
+        "b3":"Technology used: React js, React router, Firebase Authentication, Bootstrap",
+        " details":"Health related website.User will find a Doctor with Doctor details also they will know all information about the Hospita.single page application and ui responsive"
+    }
+]

@@ -1,0 +1,15 @@
+#findmore{
+    background-image: url("../images/full-shot-group-girls-playing-golf_23-2148295357.jpg");
+    background-repeat:no-repeat ;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+@media only screen and (min-width:689px) and (max-width: 991px){
+    .findmore{
+        width: 100%;
+        height: auto;
+    }
+}
