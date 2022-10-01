@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Registration.css";
 import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-//import useFirebase from "../../../Firebase/useFirebase";
+import { NavLink} from "react-router-dom";
+
 
 const Registration = () => {
+  const [isPending, setIsPending]=useState("")
   const [msg, setMsg] = useState("");
-  //const { handleUserRegister } = useFirebase();
   const { register, handleSubmit } = useForm();
-  //const location = useLocation();
-  //const navigate = useNavigate();
+  useEffect(() => {
+    const pending = localStorage.getItem("pending")
+    setIsPending(pending)
+      console.log(pending);
+  }, [register]);
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/register", {
+    console.log(data);
+    fetch("http://localhost:5000/aa", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
@@ -22,15 +26,14 @@ const Registration = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+      
         console.log("Success:", data);
-        setMsg("your fom is pandding")
+        setMsg("Your form is pandding")
       })
       .catch((error) => {
         console.error("Error:", error);
       });
 
-    //handleUserRegister(data.email, data.password, location, navigate);
-    // console.log(data);
   };
 
   return (
@@ -84,7 +87,7 @@ const Registration = () => {
           type="submit"
           value="Register"
         />
-        <br />
+        
         <NavLink style={{ textDecoration: "none" }} to="/login">
           <Button className="text-dark" variant="text">
             Already Register? Please Login

@@ -59,11 +59,10 @@ const useFirebase = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user);       
-        fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
-          .then((res) => res.json())
-          .then((data) => setAdmin(data?.role));
-        
+        setUser(user);
+        // fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+        //   .then((res) => res.json())
+        //   .then((data) => setAdmin(data?.role));
       }
     });
   }, [auth]);
@@ -83,7 +82,7 @@ const useFirebase = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setUser(result.user);
-        console.log(result.user);
+        // console.log(result.user);
         const data = {
           name: result.user.name,
           email: result.user.email,
@@ -104,12 +103,6 @@ const useFirebase = () => {
       .then((res) => res.json())
       .then((result) => console.log(result));
   };
-
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setAdmin(data[0]?.role));
-  // }, [user?.email]);
 
   console.log(admin);
 

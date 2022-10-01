@@ -11,8 +11,8 @@ const Facilities = () => {
   }, [])
   return (
     <div>
-      <h6 className="justify-content-center">Facilities</h6>
-      <h1 className="h11">Our Facilities</h1>
+      
+      <h1 className="h1 fs-3">Our Facilities</h1>
       <div class="wrapper">
       {
                 plans.map(plan => <Plans

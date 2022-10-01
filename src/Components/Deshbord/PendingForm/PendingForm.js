@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import useFirebase from "../../../Firebase/useFirebase";
+import "./PendingForm.css";
 
 const PendingForm = () => {
   const [msg, setMsg] = useState("");
@@ -29,15 +30,15 @@ const PendingForm = () => {
   };
 
   return (
-    <div>
-       <h5 class="mt-3 mb-2">Regestration request</h5>
+    <div className="p-5">
+      <h5 class="mt-3 mb-2">Regestration request</h5>
       {msg && (
         <div class="alert alert-success" role="alert">
           {msg}
         </div>
       )}
 
-      <Table striped bordered hover size="sm">
+      <Table striped  hover className="bg-light rounded ">
         <thead>
           <tr>
             <th>Name</th>
@@ -45,25 +46,20 @@ const PendingForm = () => {
             <th>Status</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {pendingForm.map((form) => (
             <tr>
               <td>{form.Name}</td>
               <td>{form.email}</td>
               <td>
                 <button
-                  class="product-cell stock btn btn-success me-2"
+                  class=" buttom me-2 mb-2"
                   onClick={() => handelapproveForm(form)}
                 >
-                  <span class="cell-label"></span>Approve
+                  Approve
                 </button>
-              </td>
-              <td>
-                <button
-                  class="product-cell stock btn btn-danger"
-                  onClick={() => handelCancleForm(form)}
-                >
-                  <span class="cell-label"></span>Cancel
+                <button class=" bott" onClick={() => handelCancleForm(form)}>
+                  Cancel
                 </button>
               </td>
             </tr>

@@ -1,78 +1,71 @@
 import React from "react";
+import img from "../images/logo2.png";
 import useFirebase from "../../../Firebase/useFirebase";
 import "./Header.css";
-//import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 const Header = () => {
   const { leLogout, user } = useFirebase();
   return (
     <div>
-      <nav className="navbar navbar-expand-lg  navbar navbar-dark ">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="/home">
-            {" "}
-            <img src="" alt="" width="60" />{" "}
-            <span className="text-success">PJ </span>Club
-          </a>
-          {/* {         
-                   user.email &&
-                   <p style={{marginLeft:"52%"}}>
-                    <span className="me-2 text-primary">{user?.displayName}</span>
-                    <img className="rounded-circle" width="30" height="30" src={user?.photoURL} alt="" />
-                    
-                   </p>
-                } */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <a className="nav-link active" aria-current="page" href="/home">
-                Home
-              </a>
-              <a className="nav-link active" href="/about">
-                About
-              </a>
-              <a className="nav-link active" href="/facilities">
-                Facilities
-              </a>
-              <a className="nav-link active" href="/gallery">
-                Gallery
-              </a>
-              
-              <a className="nav-link active" href="/contact">
-                Contact Us
-              </a>
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Link className="foioterpj" to="/home">
+              <img className="rounded" src={img} alt="" width="40" />{" "}
+              <Navbar.Brand href="#home">
+                <span className="pj">PJ Club</span>
+              </Navbar.Brand>
+            </Link>
+            <Nav className="ms-auto ">
+              <Link className="nav-link active" to="/">
+                {" "}
+                Home{" "}
+              </Link>
+              <Link className="nav-link active" to="/about">
+                {" "}
+                About{" "}
+              </Link>
+              <Link className="nav-link active" to="/facilities">
+                {" "}
+                Facilities{" "}
+              </Link>
+              <Link className="nav-link active" to="/gallery">
+                {" "}
+                Gallery{" "}
+              </Link>
+
               {user?.email ? (
                 <>
-                  
-                  {/* <a className="nav-link active" href="/pending">
-                    Pending
-                  </a> */}
-                  <a className="nav-link active" href="/dashbaord">
+                  <Link className="nav-link active" to="/dashbaord">
                     DashBoard
-                  </a>
-                  <button className=" btn btn-danger float-end" onClick={leLogout} >LogOut <i class="fas fa-sign-out-alt"></i></button>
+                  </Link>
+                  <Button
+                    className="bg-danger"
+                    onClick={leLogout}
+                    variant="secondary"
+                    size="sm"
+                  >
+                    LogOut
+                  </Button>
                 </>
               ) : (
                 <>
-                  <a className="nav-link" href="/login">
+                  <Link className="nav-link active" to="/login">
                     Login
-                  </a>
+                  </Link>
                 </>
               )}
-            </div>
-          </div>
-        </div>
-      </nav>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+     
     </div>
   );
 };

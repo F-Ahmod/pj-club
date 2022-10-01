@@ -178,3 +178,12 @@ color: #ff5e14;
 font-size: 14px;
 color: #878787;
 }
+
+.map{
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+}
+.foioterpj{
+  text-decoration: none;
+}

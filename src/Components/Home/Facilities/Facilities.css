@@ -41,7 +41,7 @@
   all: unset;
   display: block;
   margin-left: auto;
-  border: 2px solid #fff;
+  border: 2px solid rgb(71, 192, 81);
   padding: 10px 15px;
   border-radius: 25px;
   font-size: 10px;

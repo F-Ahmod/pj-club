@@ -1,6 +1,8 @@
 import React from "react";
+import { Col, Navbar, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import img from "../images/logo2.png";
 
 const Footer = () => {
   return (
@@ -13,8 +15,8 @@ const Footer = () => {
                 <div class="single-cta">
                   <i class="fas fa-map-marker-alt"></i>
                   <div class="cta-text">
-                    <h4>Find us</h4>
-                    <span>1010 Avenue, sw 54321, chandigarh</span>
+                    <h4>Fax </h4>
+                    <span>0379554085</span>
                   </div>
                 </div>
               </div>
@@ -22,8 +24,9 @@ const Footer = () => {
                 <div class="single-cta">
                   <i class="fas fa-phone"></i>
                   <div class="cta-text">
-                    <h4>Call us</h4>
-                    <span>9876543210 0</span>
+                    <h4>Call</h4>
+                    <span>0379569991, </span>
+                    <span>79569095</span>
                   </div>
                 </div>
               </div>
@@ -31,8 +34,8 @@ const Footer = () => {
                 <div class="single-cta">
                   <i class="far fa-envelope-open"></i>
                   <div class="cta-text">
-                    <h4>Mail us</h4>
-                    <span>mail@info.com</span>
+                    <h4>E-Mail</h4>
+                    <span>kelabpj@hotmail.com</span>
                   </div>
                 </div>
               </div>
@@ -42,73 +45,45 @@ const Footer = () => {
             <div class="row">
               <div class="col-xl-4 col-lg-4 ">
                 <div class="">
-                 
-                    <a  href="index.html">
-                     <h2 className="d-flex justify-content-center">PJ Club</h2>
-                    </a>
-                    <p className="text-light text-start d-flex justify-content-center">
-                      Lorem ipsum dolor sit amet, consec tetur adipisicing elit,
-                      sed do eiusmod tempor incididuntut consec tetur
-                      adipisicing elit.
-                    </p>
-                  
+                  <Link className="foioterpj" to="/home">
+                    <img className="rounded" src={img} alt="" width="40" />{" "}
+                    <Navbar.Brand href="/home">
+                      <span className="fs-5">PJ Club</span>
+                    </Navbar.Brand>
+                  </Link>
                 </div>
               </div>
               <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                 <div class="footer-widget">
-                  <div class="footer-widget-heading">
-                    {/* <h3>Useful Links</h3> */}
-                  </div>
                   <ul>
                     <li>
-                      <a href="#">Home</a>
+                      <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <a href="#">about</a>
+                      <Link to="/about">About</Link>
                     </li>
                     <li>
-                      <a href="#">services</a>
+                      <Link to="/contact">Contact</Link>
                     </li>
                     <li>
-                      <a href="#">portfolio</a>
+                      <Link to="/gallery">Gallery</Link>
                     </li>
-                    <li>
-                      <a href="#">Contact</a>
-                    </li>
-                    <li>
-                      <a href="#">About us</a>
-                    </li>
-                   
-                    
                   </ul>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+              <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="footer-widget">
-                  <div class="footer-social-icon">
-                    <span>Follow us</span>
-                    <a href="#">
-                      <i class="fab fa-facebook-f facebook-bg"></i>
-                    </a>
-                    <a href="#">
-                      <i class="fab fa-twitter twitter-bg"></i>
-                    </a>
-                    <a href="#">
-                      <i class="fab fa-google-plus-g google-bg"></i>
-                    </a>
+                  <div class="">
+                    <Col>
+                      <iframe
+                        className="map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231895.93139248763!2d91.41940869402687!3d24.74836530939623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37511854af0e933b%3A0xfd6852de07af108a!2sJagannathpur%20Upazila!5e0!3m2!1sen!2sbd!4v1651866330305!5m2!1sen!2sbd"
+                        allowfullscreen=""
+                        loading="lazy"
+                        title="hello world"
+                      ></iframe>
+                    </Col>
                   </div>
-                  {/* <div class="footer-widget-heading">
-                                <h3>Subscribe</h3>
-                            </div> */}
-                  {/* <div class="footer-text mb-25">
-                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
-                            </div> */}
-                  {/* <div class="subscribe-form">
-                                <form action="#">
-                                    <input type="text" placeholder="Email Address"/>
-                                    <button><i class="fab fa-telegram-plane"></i></button>
-                                </form>
-                            </div> */}
                 </div>
               </div>
             </div>
@@ -116,16 +91,14 @@ const Footer = () => {
         </div>
         <div class="copyright-area">
           <div class="container">
-            <div class="row">
-              <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-                <div class="copyright-text">
-                  <p>
-                    Copyright &copy; 2018, All Right Reserved{" "}
-                    <a href="https://codepen.io/anupkumar92/">Anup</a>
-                  </p>
-                </div>
+            
+              <div class="mx-auto copyright-text">
+                <p>
+                  Copyright &copy; 2022, All Right Reserved{" "}
+                  <a href="#">PJ-club</a>
+                </p>
               </div>
-              <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+              {/* <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                 <div class="footer-menu">
                   <ul>
                     <li>
@@ -145,8 +118,8 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
-            </div>
+              </div> */}
+           
           </div>
         </div>
       </footer>

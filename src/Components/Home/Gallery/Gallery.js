@@ -13,28 +13,15 @@ const Gallery = () => {
     }, [])
   return (
     <div>
-      <h4>Gallery</h4>
-      <div  className='containerrr p-5'>
+      <h4 className='mt-4'>Gallery</h4>
+      <div  className='containerrr ps-5 pe-5'>
       {
                 gallery.map(gallery => <Gallerys
                     gallery={gallery}
                    ></Gallerys>)
             }
       </div>
-      {/* <div class="card-group m-3 ">
-        <div class="card me-3">
-          <img src={img} class="card-img-top" alt="..." />
-        </div>
-        <div class="card me-3">
-          <img src={img} class="card-img-top" alt="..." />
-        </div>
-        <div class="card me-3">
-          <img src={img} class="card-img-top" alt="..." />
-        </div>
-        <div class="card me-3">
-          <img src={img} class="card-img-top" alt="..." />
-        </div>
-      </div> */}
+     
       
     </div>
   );

@@ -6,10 +6,10 @@
   --sidebar-main-color: rgb(28, 156, 170);
   --table-border: #303f62;
   --table-header: #455782;
-  --app-content-main-color: rgba(8, 7, 7, 0.924);
+  --app-content-main-color: rgba(199, 189, 189, 0.924);
   --sidebar-link: rgb(0, 0, 0);
   --sidebar-active-link: #4c5e7e;
-  --sidebar-hover-link: #1a2539;
+  --sidebar-hover-link: #cbd1dc;
   --action-color: #2869ff;
   --action-color-hover: #6291fd;
   --app-content-secondary-color: #979da8;
@@ -21,11 +21,11 @@
   --app-bg: #fff;
   --sidebar: #f3f6fd;
   --app-content-secondary-color: #f3f6fd;
-  --app-content-main-color: #1f1c2e;
-  --sidebar-link: #1f1c2e;
+  --app-content-main-color: #8e8a9f;
+  --sidebar-link: #cbcad0;
   --sidebar-hover-link: rgba(195, 207, 244, 0.5);
   --sidebar-active-link: rgba(195, 207, 244, 1);
-  --sidebar-main-color: #1f1c2e;
+  --sidebar-main-color: #aba9b4;
   --filter-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
