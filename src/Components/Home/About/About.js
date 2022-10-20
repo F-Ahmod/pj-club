@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import img2 from "../images/man-golf-field-flag_23-2148822983.jpg";
 import AOS from "aos";
-// import { Link } from "react-router-dom";
 import "./About.css";
 
 const About = () => {
@@ -14,7 +13,7 @@ const About = () => {
   }, []);
   return (
     <div className="row  mt-3 mb-5">
-      <div className="">
+      {/* <div className="">
         <nav
           id="findmore"
           class="navbar navbar-expand-lg navbar-light bg-light"
@@ -71,7 +70,7 @@ const About = () => {
             optio fugit. Quasi!
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

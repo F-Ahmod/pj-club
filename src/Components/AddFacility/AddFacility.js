@@ -6,6 +6,7 @@ const AddFacility = () => {
   const { register, handleSubmit } = useForm();
   const [benifits, setBenifits] = useState([]);
   const [name, setName] = useState("");
+  const [msg, setMsg] = useState("");
 
   const handleAddBenfit = () => {
     if (!name) return;
@@ -22,7 +23,7 @@ const AddFacility = () => {
   const onSubmit = (data) => {
     if (benifits.length === 0) return;
     const facility = { ...data, benifits };
-    console.log(facility);
+    setMsg("Your succes");
 
     fetch("http://localhost:5000/addplans", {
       method: "POST",
@@ -32,30 +33,47 @@ const AddFacility = () => {
       body: JSON.stringify(facility),
     })
       .then((response) => response.json())
-      .then((data) => {})
-      .catch((error) => {});
+      .then((data) => {});
+    console.log("Success:", data);
+    setMsg("Bike Added succesfully");
+    setTimeout(() => setMsg(""), 3000).catch((error) => {});
   };
 
   return (
-    <div style={{ width: "300px" }} className="rounded shadow-sm mt-5 mx-auto p-3 bg-light">
+    <div
+      style={{ width: "90%", background: "#FFFFFF" }}
+      className="rounded shadow-sm mt-5 mx-auto  p-3 "
+    >
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
+          style={{ width: "80%" }}
           className="input-field"
           {...register("image", { required: true })}
           placeholder="Image Url"
         />
+        {/* <input 
+        style={{ width: "80%" }}
+        className="input-field" 
+        type="file" id="myFile" 
+        name="filename"
+        {...register("image", { required: true })}
+        placeholder="Image Url"
+
+        /> */}
         <input
+          style={{ width: "80%" }}
           className="input-field"
           {...register("title", { required: true })}
           placeholder="Title"
         />
         <input
+          style={{ width: "80%" }}
           className="input-field"
           {...register("fee", { required: true })}
           placeholder="Price"
         />
 
-        <div className="w-100 d-flex mt-2 flex-wrap gap-2">
+        <div className="w-100 d-flex  flex-wrap gap-2">
           {benifits.map((benifit, i) => (
             <Badge
               key={benifit}
@@ -72,8 +90,9 @@ const AddFacility = () => {
         <br />
         <div className="d-flex align-items-center">
           <input
-            placeholder="Add benifits text"
-            className="me-2 p-1 rounded border-0"
+            style={{ width: "80%" }}
+            placeholder="Add bike Detaills"
+            className="p-2 rounded border-0"
             type="text"
             onChange={(e) => setName(e.target.value)}
           />
@@ -86,7 +105,11 @@ const AddFacility = () => {
             Add
           </Button>
         </div>
-
+        {msg && (
+          <div class="alert alert-success" role="alert">
+            {msg}
+          </div>
+        )}
         <input className="mt-3 buttom" type="submit" />
       </form>
     </div>

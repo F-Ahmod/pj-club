@@ -1,6 +1,6 @@
 import "./App.css";
-import {  Routes, Route} from "react-router-dom";
-import Header from "./Components/Home/Header/Header";
+import { Routes, Route } from "react-router-dom";
+//import Header from "./Components/Home/Header/Header";
 import Home from "./Components/Home/Home";
 import About from "./Components/Home/About/About";
 import Facilities from "./Components/Home/Facilities/Facilities";
@@ -16,41 +16,53 @@ import AddFacility from "./Components/AddFacility/AddFacility";
 import SendEmail from "./Components/SendEmail/SendEmail";
 import Payment from "./Components/Payment/Payment";
 import BookPlan from "./Components/BookPlan/BookPlan";
-
-
+import Das2 from "./Components/Das2/Das2";
+import DasHader from "./Components/DasHader/DasHader";
 
 function App() {
   return (
     <div className="App">
-     
-      
       {/* <Router> */}
-      <Header></Header>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/payment/:planId" element={<Payment />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/facilities" element={<Facilities />} />
-          <Route path="/gallery" element={ <Gallery />} />
-          <Route path="/contact" element={<Contact />} />    
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Registration />} />  
-          <Route path="/bookplan/:planId" element={<BookPlan />} />  
-          {/* <Route path="/sendEmail" element={<SendEmail />} />   */}
-          <Route path="/dashbaord" element={<Dashbord />}>
+      {/* <Header></Header> */}
+      <Routes>
+        <Route path="#" element={<Home />} />
+        <Route path="/" element={<Das2 />} />
+
+        <Route path="/payment/:planId" element={<Payment />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        {/* <Route path="/facilities" element={<Facilities />} /> */}
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/bookplan/:planId" element={<BookPlan />} />
+        {/* <Route path="/sendEmail" element={<SendEmail />} />   */}
+
+        <Route path="/" element={<Das2 />}>
+          <Route index element={<DasHader />} />
+          <Route path="dasHader" element={<DasHader />} />
+
+          <Route path="pending" element={<PendingForm />} />
+          <Route path="facilities" element={<Facilities />} />
+          <Route path="addFacility" element={<AddFacility />} />
+          {/* <Route path="makeadmin" element={<AdminRoute> <MakeAdmin /> </AdminRoute>} /> */}
+          <Route path="makeadmin" element={<MakeAdmin />} />
+        </Route>
+
+        {/* <Route path="/" element={<Dashbord />}>
             <Route path="pending" element={<PendingForm />}/>
             <Route path="facilities" element={<Facilities />} />
             <Route path="addFacility" element={<AddFacility />} />
 
-            {/* <Route path="makeadmin" element={<AdminRoute> <MakeAdmin /> </AdminRoute>} /> */}
+            <Route path="makeadmin" element={<AdminRoute> <MakeAdmin /> </AdminRoute>} />
             <Route path="makeadmin" element={ <MakeAdmin /> } />
-          </Route>
-         
-          {/* <Route path="/SingleProductDetails/:id" element={<Singleproduct />} />  */}
-        </Routes>
+          </Route> */}
+
+        {/* <Route path="/SingleProductDetails/:id" element={<Singleproduct />} />  */}
+      </Routes>
       {/* </Router> */}
-     
+
       {/* <Footer/> */}
     </div>
   );

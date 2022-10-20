@@ -19,7 +19,7 @@ const Header = () => {
             <Link className="foioterpj" to="/home">
               <img className="rounded" src={img} alt="" width="40" />{" "}
               <Navbar.Brand href="#home">
-                <span className="pj">PJ Club</span>
+                <span className="pj">Bike Managment</span>
               </Navbar.Brand>
             </Link>
             <Nav className="ms-auto ">
@@ -27,22 +27,22 @@ const Header = () => {
                 {" "}
                 Home{" "}
               </Link>
-              <Link className="nav-link active" to="/about">
+              <Link className="nav-link active" to="/">
                 {" "}
-                About{" "}
+                Das2{" "}
               </Link>
-              <Link className="nav-link active" to="/facilities">
+              {/* <Link className="nav-link active" to="/facilities">
                 {" "}
                 Facilities{" "}
-              </Link>
-              <Link className="nav-link active" to="/gallery">
+              </Link> */}
+              {/* <Link className="nav-link active" to="/gallery">
                 {" "}
                 Gallery{" "}
-              </Link>
+              </Link> */}
 
               {user?.email ? (
                 <>
-                  <Link className="nav-link active" to="/dashbaord">
+                  <Link className="nav-link active" to="/">
                     DashBoard
                   </Link>
                   <Button

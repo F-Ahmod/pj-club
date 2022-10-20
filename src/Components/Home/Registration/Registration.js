@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./Registration.css";
 import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { NavLink} from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
+import useFirebase from "../../../Firebase/useFirebase";
 
 
 const Registration = () => {
+  const {handleUserRegister}=useFirebase("")
   const [isPending, setIsPending]=useState("")
   const [msg, setMsg] = useState("");
   const { register, handleSubmit } = useForm();
@@ -14,25 +16,29 @@ const Registration = () => {
     setIsPending(pending)
       console.log(pending);
   }, [register]);
-
+  const navigate = useNavigate();
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:5000/aa", {
-      method: "POST", // or 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
+    handleUserRegister(data.email, data.password);
+    return navigate("/");
+    
+    // console.log(data);
+    // fetch("http://localhost:5000/aa", {
+    //   method: "POST", // or 'PUT'
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
       
-        console.log("Success:", data);
-        setMsg("Your form is pandding")
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    //     console.log("Success:", data);
+    //     setMsg("Your form is pandding")
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //   });
 
   };
 

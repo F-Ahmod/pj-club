@@ -16,7 +16,7 @@ intializeFirebase();
 const useFirebase = () => {
   const [loading, setLoading] = useState(true);
   const [authError, setAuthError] = useState("");
-  const [admin, setAdmin] = useState("");
+  const [admin, setAdmin] = useState(false);
 
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
@@ -64,6 +64,12 @@ const useFirebase = () => {
         //   .then((res) => res.json())
         //   .then((data) => setAdmin(data?.role));
       }
+      fetch(`http://localhost:5000/checkAdmin/${user.email}`)
+    .then(data=>data.json())
+    .then(res=>{
+      setAdmin(res)
+    
+    })
     });
   }, [auth]);
 

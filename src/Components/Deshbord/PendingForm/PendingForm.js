@@ -12,12 +12,14 @@ const PendingForm = () => {
       .then((data) => data.json())
       .then((res) => setPendingForm(res));
   }, [msg]);
+  
   const deleteForm = async (id) => {
     await fetch(`http://localhost:5000/form/${id}`, {
       method: "DELETE",
     }).then(() => {});
     console.log(id);
   };
+
   const handelapproveForm = async (data) => {
     handleUserRegister(data.email, data.password);
     await deleteForm(data._id);

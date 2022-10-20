@@ -37,27 +37,27 @@ const Dashbord = () => {
             
             <li tabindex="0" class="icon-customers">
               {" "}
-              <Link to="/dashbaord/facilities">
+              <Link to="/facilities">
                 <span>Facilities</span>
               </Link>
             </li>
             <li tabindex="0" class="icon-customers">
               {" "}
-              <Link to="/dashbaord/pending">
+              <Link to="/pending">
                 <span>Pandding form</span>
               </Link>
             </li>
 
             <li tabindex="0" class="icon-users">
               {" "}
-              <Link to="/dashbaord/makeadmin">
+              <Link to="/makeadmin">
                 <span>Make Admin</span>
               </Link>
             </li>
 
             <li tabindex="0" class="icon-users">
               {" "}
-              <Link to="/dashbaord/addFacility">
+              <Link to="/addFacility">
                 <span>Add Facility</span>
               </Link>
             </li>
