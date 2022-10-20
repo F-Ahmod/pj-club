@@ -45,33 +45,25 @@ const AddFacility = () => {
       className="rounded shadow-sm mt-5 mx-auto  p-3 "
     >
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input
+        {/* <input
           style={{ width: "80%" }}
           className="input-field"
           {...register("image", { required: true })}
           placeholder="Image Url"
-        />
-        {/* <input 
-        style={{ width: "80%" }}
-        className="input-field" 
-        type="file" id="myFile" 
-        name="filename"
-        {...register("image", { required: true })}
-        placeholder="Image Url"
-
         /> */}
+        
         <input
           style={{ width: "80%" }}
           className="input-field"
           {...register("title", { required: true })}
           placeholder="Title"
         />
-        <input
+        {/* <input
           style={{ width: "80%" }}
           className="input-field"
           {...register("fee", { required: true })}
           placeholder="Price"
-        />
+        /> */}
 
         <div className="w-100 d-flex  flex-wrap gap-2">
           {benifits.map((benifit, i) => (

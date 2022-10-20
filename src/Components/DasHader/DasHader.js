@@ -76,9 +76,7 @@ const DasHader = () => {
                     <span class="badge badge-pill bg-soft-success text-success me-2">
                       <i class="bi bi-arrow-up me-1"></i>13%
                     </span>
-                    <span class="text-nowrap text-xs text-muted">
-                      all
-                    </span>
+                    <span class="text-nowrap text-xs text-muted">all</span>
                   </div>
                 </div>
               </div>
@@ -142,9 +140,7 @@ const DasHader = () => {
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">
-                        
-                      </span>
+                      <span class="h6 font-semibold text-muted text-sm d-block mb-2"></span>
                       <span class="h3 font-bold mb-0">All S</span>
                     </div>
                     <div class="col-auto">
