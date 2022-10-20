@@ -64,7 +64,7 @@ const AddFacility = () => {
           {...register("fee", { required: true })}
           placeholder="Price"
         /> */}
-
+{/* my pj club */}
         <div className="w-100 d-flex  flex-wrap gap-2">
           {benifits.map((benifit, i) => (
             <Badge
